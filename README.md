@@ -1,27 +1,28 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
 * Ruby version
 
-* System dependencies
+  ruby 3.1.2p20 (2022-04-12 revision 4491bb740a) [x86_64-linux]
 
-* Configuration
+
+* Rails version
+
+  Rails 7.0.6
+
 
 * Database creation
 
+  `$ rails db:create`
+
+
 * Database initialization
 
+  `$ rails db:migrate`
+
+  `$ rails import:movies_and_reviews`
+
+
 * How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
 
 
 ### This assignment is about writing a small Ruby On Rails application. Use a methodology that works for you or that you are used to.
