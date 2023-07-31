@@ -13,3 +13,37 @@ namespace :import do
   end
 end
 
+namespace :import_data do
+  desc 'Import movies and reviews from CSV files [using csv]'
+  task movies_and_reviews: :environment do
+    # Import movies
+    movies_file_path = 'assignment/movies.csv'
+
+    CSV.foreach(movies_file_path, headers: true) do |row|
+      movie = Movie.find_by(title: 'Inception')
+      actor = Actor.find_by(name: 'Leonardo Di Caprio')
+
+      Movie.create(
+        title: row['Movie'],
+        description: row['Description'],
+        year: row['Year'],
+        director: row['Director'],
+        actor: row['Actor'],
+        filming_location: row['Filming location'],
+        country: row['Country']
+      )
+    end
+
+    # Import reviews
+    reviews_file_path = 'assignment/reviews.csv'
+
+    CSV.foreach(reviews_file_path, headers: true) do |row|
+      Review.create(
+        movie: row['Movie'],
+        user: row['User'],
+        stars: row['Stars'],
+        review: row['Review']
+      )
+    end
+  end
+end

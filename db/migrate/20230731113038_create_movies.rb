@@ -4,12 +4,10 @@ class CreateMovies < ActiveRecord::Migration[7.0]
       t.string :title
       t.text :description
       t.integer :year
-      t.string :director
-      t.string :actor
-      t.string :filming_location
-      t.string :country
 
       t.timestamps
     end
+
+    add_index :movies, :title, unique: true
   end
 end
