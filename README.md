@@ -19,7 +19,7 @@
 
   `$ rails db:migrate`
 
-  `$ rails import:movies_and_reviews`
+  `$ rails import_data:movies_and_reviews`
 
 
 * How to run the test suite

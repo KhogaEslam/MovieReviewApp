@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_07_31_124032) do
+ActiveRecord::Schema[7.0].define(version: 2023_07_31_132917) do
   create_table "actors", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -30,6 +30,13 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_31_124032) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["name"], name: "index_countries_on_name", unique: true
+  end
+
+  create_table "countries_movies", id: false, force: :cascade do |t|
+    t.integer "movie_id", null: false
+    t.integer "country_id", null: false
+    t.index ["country_id", "movie_id"], name: "index_countries_movies_on_country_id_and_movie_id"
+    t.index ["movie_id", "country_id"], name: "index_countries_movies_on_movie_id_and_country_id"
   end
 
   create_table "directors", force: :cascade do |t|
@@ -60,8 +67,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_31_124032) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "director_id", null: false
-    t.integer "country_id", null: false
-    t.index ["country_id"], name: "index_movies_on_country_id"
     t.index ["director_id"], name: "index_movies_on_director_id"
     t.index ["title"], name: "index_movies_on_title", unique: true
   end
@@ -84,7 +89,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_31_124032) do
     t.index ["name"], name: "index_users_on_name", unique: true
   end
 
-  add_foreign_key "movies", "countries"
   add_foreign_key "movies", "directors"
   add_foreign_key "reviews", "movies"
   add_foreign_key "reviews", "users"
