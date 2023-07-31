@@ -1,5 +1,9 @@
 class MoviesController < ApplicationController
   def index
-    @movies = Movie.all
+    @movies = if params[:search]
+                Movie.search(params[:search])
+              else
+                Movie.all
+              end
   end
 end

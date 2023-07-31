@@ -7,6 +7,12 @@
 <body>
     <h1>Movies Overview</h1>
 
+    <%= form_tag movies_path, method: :get do %>
+    <%= label_tag :search, "Search by Actor:" %>
+    <%= text_field_tag :search %>
+    <%= submit_tag "Search" %>
+    <% end %>
+
     <table>
         <thead>
         <tr>

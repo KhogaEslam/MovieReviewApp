@@ -6,4 +6,9 @@ class Movie < ApplicationRecord
   has_and_belongs_to_many :filming_locations
 
   has_many :reviews
+
+  scope :search, lambda { |text|
+    left_joins(:actors)
+      .where('actors.name LIKE :search', { search: "%#{text}%" })
+  }
 end
