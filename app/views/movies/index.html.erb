@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Movies Overview</title>
+</head>
+<body>
+<h1>Movies Overview</h1>
+
+<%= form_tag movies_path, method: :get do %>
+  <%= label_tag :search, "Search by Actor:" %>
+  <%= text_field_tag :search %>
+  <%= submit_tag "Search" %>
+<% end %>
+<br>
+<table>
+  <thead>
+  <tr>
+    <th>Title</th>
+    <th>Year</th>
+    <th>Director</th>
+    <th>Actors</th>
+    <th>Avg. Rating</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @movies.each do |movie| %>
+    <tr>
+      <td><%= movie.title %></td>
+      <td><%= movie.year %></td>
+      <td><%= movie.director&.name %></td>
+      <td>
+        <ul>
+          <% movie.actors.each do |actor| %>
+            <li><%= actor.name %></li>
+          <% end %>
+        </ul>
+      </td>
+      <td><%= movie.average_rating %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+</body>
+</html>

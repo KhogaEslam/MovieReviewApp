@@ -5,5 +5,7 @@ class MoviesController < ApplicationController
               else
                 Movie.all
               end
+
+    @movies = @movies.sorted_by_reviews
   end
 end
