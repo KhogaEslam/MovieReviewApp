@@ -24,6 +24,8 @@
 
 * How to run the test suite
 
+  N/A
+
 
 ### This assignment is about writing a small Ruby On Rails application. Use a methodology that works for you or that you are used to.
 
@@ -41,4 +43,11 @@
 
 7. Sort the overview by average stars (rating) in an efficient way
 
-** Design CSV importer/application for heavy data processing 
+### Design CSV importer/application for heavy data processing
+
+  This depends on the nature of the imported data, do I need to do processing on it or not?
+  
+  This can be done by different ways, using batches/chunks [I've developed that feature for different data sources not just CSV files at incorta.]
+  
+  Also, can be done using streams to read line by line instead of loading the whole file to memory.
+
