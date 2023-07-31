@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Movies Overview</title>
+</head>
+<body>
+    <h1>Movies Overview</h1>
+
+    <table>
+        <thead>
+        <tr>
+            <th>Title</th>
+            <th>Year</th>
+            <th>Director</th>
+        </tr>
+        </thead>
+        <tbody>
+        <% @movies.each do |movie| %>
+        <tr>
+            <td><%= movie.title %></td>
+            <td><%= movie.year %></td>
+            <td><%= movie.director %></td>
+        </tr>
+        <% end %>
+        </tbody>
+    </table>
+</body>
+</html>
