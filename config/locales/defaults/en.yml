@@ -1,0 +1,33 @@
+en:
+  base:
+    not_authenticated: "Unable to authenticate user"
+    login_required: "This call requires login"
+    not_authorized: "Permission denied"
+    not_applicable: 'N/A'
+    insufficient_privilege: "Insufficient privilege to perform this action"
+
+  errors:
+    e_500: "Internal Server Error"
+    e_404: "Not Found"
+    e_400: "Some parameters are missing"
+    e_fk: "This record can't be deleted as there are other records associated with it"
+    invalid_id: 'Invalid ID provided'
+
+  data:
+    found: 'Data found'
+    not_found: 'Data Not found'
+
+  params:
+    missing: 'These parameters are missing: '
+    invalid: 'Invalid parameters was provided'
+    missing_fill: 'Fill all the required fields.'
+
+  resource:
+    created: "%{resource} created successfully"
+    updated: "%{resource} updated successfully"
+    activated: "%{resource} activated successfully"
+    deactivated: "%{resource} deactivated successfully"
+    deleted: "%{resource} deleted successfully"
+    approved: "%{resource} approved successfully"
+    rejected: "%{resource} rejected successfully"
+    empty:   "No %{resource} available!"

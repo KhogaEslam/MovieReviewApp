@@ -1,0 +1,33 @@
+ar:
+  base:
+    not_authenticated: "غير قادر على التحقق من هوية المستخدم"
+    login_required: "مطلوب تسجيل الدخول"
+    not_authorized: "لا تملك صلاحية الوصول"
+    not_applicable: 'N/A'
+    insufficient_privilege: 'ليس لديك صلاحية الوصول'
+
+  errors:
+    e_500: " خطا داخلي في السيرفر "
+    e_404: "لا يوجد"
+    e_400: "هذه الباراميترات مطلوبه "
+    e_fk: "لايمكن حذف هذا السجل , هناك بعض السجلات مرتبطه به"
+    invalid_id: 'المعرف غير صحيح'
+
+  data:
+    found: 'البيانات موجودة'
+    not_found: 'البيانات غير موجودة'
+
+  params:
+    missing: 'بعض المتغيرات المطلوبة غير موجودة: '
+    invalid: 'بعض المتغيرات غير صحيحة.'
+    missing_fill: 'يجب ملئ كل المتغيرات المطلوبة.'
+
+  resource:
+    created : "تم حفظ %{resource} بنجاح"
+    updated : "تم تعديل  %{resource} بنجاح"
+    deleted  : "تم حذف %{resource} بنجاح"
+    activated: "تم تنشيط %{resource} بنجاح"
+    deactivated: "تم تعطيل %{resource} بنجاح"
+    approved: "تمت الموافقة على %{resource} بنجاح"
+    rejected: "تم رفض %{resource} بنجاح"
+    empty:   "%{resource} غير متاح"
